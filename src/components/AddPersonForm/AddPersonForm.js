@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AddPersonForm() {
+export default function AddPersonForm(props) {
   const [person, setPerson] = useState("");
 
   function handleChange(e) {
@@ -8,6 +8,8 @@ export default function AddPersonForm() {
   }
 
   function handleSubmit(e) {
+    props.handleSubmit(person);
+    setPerson("");
     e.preventDefault();
   }
 
@@ -17,7 +19,7 @@ export default function AddPersonForm() {
         type="text"
         placeholder="Add new contact"
         onChange={handleChange}
-        value={person.name}
+        value={person}
       />
       <button type="submit">Add</button>
     </form>

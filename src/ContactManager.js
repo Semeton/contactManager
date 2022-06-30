@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./App.css";
 import AddPersonForm from "./components/AddPersonForm/AddPersonForm";
 import PeopleList from "./components/PeopleList/PeopleList";
 
-const contacts = ["James Smith", "Thomas Anderson", "Bruce Wayne"];
-
 function ContactManager(props) {
   const [contacts, setContacts] = useState(props.data);
+
+  function addPerson(name) {
+    setContacts([...contacts, name]);
+  }
+
   return (
     <div>
       <h1>Contact Manager</h1>
-      <AddPersonForm />
+      <AddPersonForm handleSubmit={addPerson} />
       <PeopleList data={contacts} />
     </div>
   );

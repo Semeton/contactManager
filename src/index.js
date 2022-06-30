@@ -4,10 +4,12 @@ import "./index.css";
 import ContactManager from "./ContactManager";
 import reportWebVitals from "./reportWebVitals";
 
+const contacts = ["James Smith", "Thomas Anderson", "Bruce Wayne"];
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ContactManager />
+    <ContactManager data={contacts} />
   </React.StrictMode>
 );
 
