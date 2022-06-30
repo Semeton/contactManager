@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 export default function AddPersonForm(props) {
   const [person, setPerson] = useState("");
@@ -14,14 +16,14 @@ export default function AddPersonForm(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <Form onSubmit={handleSubmit}>
+      <Form.Control
         type="text"
         placeholder="Add new contact"
         onChange={handleChange}
         value={person}
       />
-      <button type="submit">Add</button>
-    </form>
+      <Button type="submit">Add</Button>
+    </Form>
   );
 }
