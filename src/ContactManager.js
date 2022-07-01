@@ -10,6 +10,7 @@ function ContactManager(props) {
   function addPerson(name) {
     setContacts([...contacts, name]);
   }
+  // Git comment
 
   return (
     <div className="container">
