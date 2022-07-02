@@ -11,6 +11,7 @@ function ContactManager(props) {
     setContacts([...contacts, name]);
   }
   // Git comment
+  // Another Git comment
 
   return (
     <div className="container">
